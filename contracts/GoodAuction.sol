@@ -13,22 +13,39 @@ contract GoodAuction is AuctionInterface {
 	 * Must return false on failure and allow people to
 	 * retrieve their funds
 	 */
-	function bid() payable external returns(bool) {
-		// YOUR CODE HERE
+	 function bid() payable external returns(bool) {
+		if (msg.value <= highestBid) {
+			msg.sender.transfer(msg.value);
+			return false;
+		} else {
+			if (highestBidder != 0){
+				refunds[highestBidder] = highestBid;
+			}
+			highestBidder = msg.sender;
+			highestBid = msg.value;
+			return true;
+		}
 	}
 
 	/* New withdraw function, shifts to push paradigm */
-	function withdrawRefund() external returns(bool) {
-		// YOUR CODE HERE
+	 function withdrawRefund() external returns(bool) {
+		if (refunds[msg.sender] == 0){
+			return false;
+		} else {
+			uint giveBack = refunds[msg.sender];
+			refunds[msg.sender] = 0;
+			msg.sender.transfer(giveBack);
+			return true;
+		}
 	}
 
 	/* Allow users to check the amount they can withdraw */
-	function getMyBalance() constant external returns(uint) {
+	 function getMyBalance() constant external returns(uint) {
 		return refunds[msg.sender];
 	}
 
 	/* Give people their funds back */
-	function () payable {
-		// YOUR CODE HERE
+	  function () payable {
+		revert();
 	}
 }

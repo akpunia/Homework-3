@@ -1,0 +1,59 @@
+{
+  "contract_name": "BadAuction",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHighestBidder",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "bid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHighestBid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b61011e8061001f6000396000f30060606040523615604f5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416623495a4811460535780631998aeef14608c5780634979440a1460a6575b5b5b005b3415605d57600080fd5b606360c8565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b609260e5565b604051901515815260200160405180910390f35b341560b057600080fd5b60b660eb565b60405190815260200160405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff165b90565b60005b90565b6001545b905600a165627a7a72305820f2c14ed4b71f1c2d058bb40ef2126e5f621a7819d312c9c1f5523f9d577b3b4b0029",
+  "networks": {
+    "1508042471652": {
+      "events": {},
+      "links": {},
+      "address": "0x63aa31a5a9957399626802c16c86b923beecd7ac",
+      "updated_at": 1508043364164
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1508043364164
+}
